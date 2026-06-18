@@ -1,0 +1,13 @@
+{
+  "name": "loan-select-cairns",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Loan Select Cairns marketing site (static + serverless contact endpoint)",
+  "scripts": {
+    "deploy": "vercel deploy --prod"
+  },
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}

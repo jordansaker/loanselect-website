@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Calculators — Loan Select Cairns</title>
+<meta name="description" content="Quick repayment estimator plus a full library of borrowing, savings, refinance, stamp duty and budget calculators." />
+<link rel="icon" type="image/png" href="images/LS_logo.png" />
+<link rel="shortcut icon" href="images/LS_logo.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topline">
+  <div class="container">
+    <span>25–27 Sheridan Street, Cairns QLD 4870</span>
+    <span><a href="tel:0740410855">Ph 07 4041 0855</a> · <a href="tel:0419787766">Mob 0419 787 766</a> · <a href="mailto:david@loanselect.com.au">david@loanselect.com.au</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container nav">
+    <a class="brand" href="/index.html" aria-label="Loan Select Cairns home">
+      <img src="images/LS_logo.png" alt="Loan Select Cairns logo">
+      <span>
+        <span class="name">Loan Select</span>
+        <span class="sub">Cairns</span>
+      </span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Primary">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/calculators.html" class="active">Calculators</a>
+      <a href="/news.html">News</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-dark" href="/contact.html">Book a free chat</a>
+      <button class="hamburger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+
+<main>
+  <section class="hero hero-simple on-dark">
+    <div class="container">
+      <div>
+        <span class="eyebrow">Calculators</span>
+        <h1 style="max-width:16ch">Run the numbers in seconds.</h1>
+        <p class="lead">A quick guide to repayments. For figures tailored to you, have a chat with us — it's free.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0;margin-top:-30px">
+    <div class="container">
+      <div class="calc">
+        <span class="eyebrow">Repayment estimator</span>
+        <div class="calc-grid" style="margin-top:22px">
+          <div>
+            <div class="field">
+              <div class="frow"><label for="amt">Loan amount</label><output id="amtOut">$550,000</output></div>
+              <input type="range" id="amt" min="100000" max="1500000" step="10000" value="550000">
+            </div>
+            <div class="field">
+              <div class="frow"><label for="rate">Interest rate</label><output id="rateOut">6.04%</output></div>
+              <input type="range" id="rate" min="3" max="9" step="0.01" value="6.04">
+            </div>
+            <div class="field" style="margin-bottom:0">
+              <div class="frow"><label for="term">Loan term</label><output id="termOut">30 years</output></div>
+              <input type="range" id="term" min="10" max="30" step="1" value="30">
+            </div>
+          </div>
+          <div class="calc-result">
+            <div class="rl">Est. monthly repayment</div>
+            <div class="rv" id="result">$3,309</div>
+            <div class="rs" id="totint">Total interest ≈ $641,000</div>
+          </div>
+        </div>
+        <p style="font-size:.78rem;color:var(--ink-soft);margin-top:22px;font-family:var(--font-mono)">Indicative only. Principal &amp; interest, fortnightly conversions and fees not included. Not a quote or credit offer.</p>
+      </div>
+      <div style="text-align:center;margin-top:40px"><a class="btn btn-gold" href="/contact.html">Get my real numbers →</a></div>
+    </div>
+  </section>
+
+  <section class="block" style="background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="block-head"><span class="eyebrow">Full calculator library</span><h2>Detailed calculators for every scenario</h2><p class="lead" style="margin-top:14px">Borrowing power, stamp duty, comparison rates, offset, split loans and more — powered by Vision Abacus.</p></div>
+      <div class="calc-index">
+        <a class="calc-link" href="/calculators/borrowing-power.html"><span class="pip"></span>Borrowing power</a>
+        <a class="calc-link" href="/calculators/budget-planner.html"><span class="pip"></span>Budget planner</a>
+        <a class="calc-link" href="/calculators/comparison-rate.html"><span class="pip"></span>Comparison rate</a>
+        <a class="calc-link" href="/calculators/compound-interest.html"><span class="pip"></span>Compound interest</a>
+        <a class="calc-link" href="/calculators/credit-card.html"><span class="pip"></span>Credit card</a>
+        <a class="calc-link" href="/calculators/extra-repayment.html"><span class="pip"></span>Extra repayment</a>
+        <a class="calc-link" href="/calculators/fortnightly-repayment.html"><span class="pip"></span>Fortnightly repayment</a>
+        <a class="calc-link" href="/calculators/home-loan-offset.html"><span class="pip"></span>Home loan offset</a>
+        <a class="calc-link" href="/calculators/how-long-to-repay.html"><span class="pip"></span>How long to repay</a>
+        <a class="calc-link" href="/calculators/income-annualisation.html"><span class="pip"></span>Income annualisation</a>
+        <a class="calc-link" href="/calculators/income-gross-up.html"><span class="pip"></span>Income gross-up</a>
+        <a class="calc-link" href="/calculators/income-tax.html"><span class="pip"></span>Income tax</a>
+        <a class="calc-link" href="/calculators/interest-only-mortgage.html"><span class="pip"></span>Interest-only mortgage</a>
+        <a class="calc-link" href="/calculators/introductory-rate-loan.html"><span class="pip"></span>Introductory rate loan</a>
+        <a class="calc-link" href="/calculators/leasing.html"><span class="pip"></span>Leasing</a>
+        <a class="calc-link" href="/calculators/loan-comparison.html"><span class="pip"></span>Loan comparison</a>
+        <a class="calc-link" href="/calculators/lump-sum-repayments.html"><span class="pip"></span>Lump sum repayments</a>
+        <a class="calc-link" href="/calculators/mortgage-switching.html"><span class="pip"></span>Mortgage switching</a>
+        <a class="calc-link" href="/calculators/property-buying-cost.html"><span class="pip"></span>Property buying cost</a>
+        <a class="calc-link" href="/calculators/property-selling-cost.html"><span class="pip"></span>Property selling cost</a>
+        <a class="calc-link" href="/calculators/rent-verse-buy.html"><span class="pip"></span>Rent vs buy</a>
+        <a class="calc-link" href="/calculators/reverse-mortgage.html"><span class="pip"></span>Reverse mortgage</a>
+        <a class="calc-link" href="/calculators/saving-goal-how-long-to-save.html"><span class="pip"></span>Savings goal — how long</a>
+        <a class="calc-link" href="/calculators/saving-goal-how-much-to-deposit.html"><span class="pip"></span>Savings goal — how much</a>
+        <a class="calc-link" href="/calculators/savings.html"><span class="pip"></span>Savings</a>
+        <a class="calc-link" href="/calculators/split-loan.html"><span class="pip"></span>Split loan</a>
+        <a class="calc-link" href="/calculators/stamp-duty.html"><span class="pip"></span>Stamp duty</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/index.html">
+          <img src="images/LS_logo.png" alt="Loan Select Cairns logo">
+          <span><span class="name">Loan Select</span><span class="sub">Cairns</span></span>
+        </a>
+        <p style="margin-top:18px;max-width:34ch">A family-owned Cairns loan brokerage helping locals into the right home loan since 2000.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/loanselect.cairns" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.2.3-2 2-2H17V2.2C16.6 2.1 15.5 2 14.3 2 11.7 2 10 3.6 10 6.6V10H7v4h3v8h3Z"/></svg></a>
+          <a href="https://au.linkedin.com/in/david-phillips-loan-select-cairns-a2a99529" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4.5A1.5 1.5 0 1 1 5.5 6 1.5 1.5 0 0 1 4 4.5ZM4 9h3v11H4Zm5 0h2.8v1.5h.1A3.1 3.1 0 0 1 14.7 9c3 0 3.3 2 3.3 4.6V20h-3v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H8Z"/></svg></a>
+          <a href="mailto:david@loanselect.com.au" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <div class="links">
+        <h4>Explore</h4>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/calculators.html">Calculators</a>
+        <a href="/news.html">News</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="links">
+        <h4>Get in touch</h4>
+        <a href="tel:0740410855">07 4041 0855</a>
+        <a href="tel:0419787766">0419 787 766</a>
+        <a href="mailto:david@loanselect.com.au">david@loanselect.com.au</a>
+        <span style="display:block;padding-top:5px">25–27 Sheridan Street,<br>Cairns QLD 4870</span>
+        <a href="/documents/Terms-Conditions.pdf" target="_blank" rel="noopener" style="padding-top:14px">Terms &amp; Conditions →</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Loan Select Pty Ltd · ACN 079 126 328 · ABN 17 079 126 328</span>
+      <span>Authorised Credit Representative under Australian Finance Group · ACL 389087</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

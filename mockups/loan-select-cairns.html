@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Loan Select Cairns — Home loans done the local way</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   BRAND COLOURS — swap these for your exact logo hex codes
+   ========================================================= */
+:root{
+  --emerald:#0E3B2E;     /* primary / dark sections */
+  --emerald-700:#14503C;
+  --emerald-600:#1A5E47;
+  --gold:#BFA15A;        /* accent / primary buttons */
+  --gold-deep:#9A7E3C;
+  --ivory:#F7F4EC;       /* page background */
+  --sand:#EFE9DB;        /* alt surface */
+  --paper:#FFFFFF;
+  --ink:#1B201D;         /* body text */
+  --ink-soft:#525a54;    /* muted text */
+  --line:#E0D9C8;        /* hairlines */
+
+  --font-display:"Fraunces",Georgia,serif;
+  --font-body:"Hanken Grotesk",-apple-system,system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace;
+  --maxw:1140px;
+  --radius:14px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--ivory);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* ---- type helpers ---- */
+.eyebrow{
+  font-family:var(--font-mono);font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold-deep);font-weight:500;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--gold)}
+.on-dark .eyebrow{color:var(--gold)}
+h1,h2,h3{font-family:var(--font-display);font-weight:500;line-height:1.08;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,6vw,4rem)}
+h2{font-size:clamp(1.9rem,4vw,2.9rem)}
+h3{font-size:1.3rem}
+p{color:var(--ink-soft)}
+.lead{font-size:1.15rem;color:var(--ink-soft);max-width:54ch}
+.on-dark{color:#EFEBDF}
+.on-dark h1,.on-dark h2,.on-dark h3{color:#fff}
+.on-dark p{color:rgba(239,235,223,.78)}
+
+/* ---- buttons ---- */
+.btn{
+  display:inline-flex;align-items:center;gap:9px;font-family:var(--font-body);
+  font-weight:500;font-size:.95rem;padding:13px 24px;border-radius:999px;
+  cursor:pointer;border:1px solid transparent;transition:transform .15s ease,background .15s ease,color .15s ease;
+}
+.btn:active{transform:translateY(1px)}
+.btn-gold{background:var(--gold);color:#23200f}
+.btn-gold:hover{background:var(--gold-deep);color:#fff}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+.btn-dark{background:var(--emerald);color:#fff}
+.btn-dark:hover{background:var(--emerald-600)}
+.btn-line{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold-deep)}
+
+/* ---- header ---- */
+.topline{background:var(--emerald);color:rgba(239,235,223,.85);font-size:.8rem;font-family:var(--font-mono);letter-spacing:.04em}
+.topline .container{display:flex;justify-content:space-between;gap:16px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.topline a:hover{color:var(--gold)}
+header{position:sticky;top:0;z-index:50;background:rgba(247,244,236,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .mark{width:42px;height:42px;border-radius:11px;background:var(--emerald);display:flex;align-items:center;justify-content:center;position:relative}
+.brand .mark svg{width:22px;height:22px}
+.brand .mark::after{content:"";position:absolute;inset:0;border-radius:11px;border:1px solid var(--gold);transform:scale(1.12);opacity:.5}
+.brand .name{font-family:var(--font-display);font-size:1.3rem;font-weight:600;line-height:1;color:var(--emerald)}
+.brand .sub{font-family:var(--font-mono);font-size:.62rem;letter-spacing:.32em;color:var(--gold-deep);text-transform:uppercase}
+.menu{display:flex;align-items:center;gap:30px}
+.menu a{font-size:.92rem;font-weight:500;color:var(--ink);position:relative;padding:4px 0}
+.menu a.active{color:var(--emerald)}
+.menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--gold)}
+.menu a:hover{color:var(--emerald-600)}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.hamburger{display:none;background:none;border:1px solid var(--line);border-radius:10px;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;color:var(--emerald)}
+.hamburger svg{width:22px;height:22px}
+
+/* ---- pages ---- */
+.page{display:none;animation:fade .45s ease}
+.page.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* ---- hero ---- */
+.hero{background:var(--emerald);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;border:1px solid rgba(191,161,90,.25)}
+.hero::after{content:"";position:absolute;right:-40px;bottom:-200px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(191,161,90,.12)}
+.hero .container{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding-top:84px;padding-bottom:90px}
+.hero h1{margin:18px 0 20px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .actions{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+.hero-card{background:rgba(255,255,255,.05);border:1px solid rgba(191,161,90,.3);border-radius:var(--radius);padding:26px;backdrop-filter:blur(4px)}
+.hero-card .rc-title{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.rc-row{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.rc-row:last-child{border-bottom:none}
+.rc-row .lbl{color:rgba(239,235,223,.8);font-size:.9rem}
+.rc-row .val{font-family:var(--font-mono);color:#fff;font-size:1.05rem}
+.rc-row .val small{color:var(--gold);font-size:.7rem}
+.rc-note{margin-top:14px;font-size:.72rem;color:rgba(239,235,223,.5);font-family:var(--font-mono)}
+
+/* ---- generic section ---- */
+section.block{padding:84px 0}
+.block-head{max-width:58ch}
+.block-head h2{margin:14px 0 16px}
+
+/* ---- stats band ---- */
+.stats{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.stats .container{display:grid;grid-template-columns:repeat(4,1fr);gap:0;padding-top:44px;padding-bottom:44px}
+.stat{padding:0 28px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:none;padding-left:0}
+.stat .num{font-family:var(--font-display);font-size:2.6rem;color:var(--emerald);line-height:1}
+.stat .cap{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-top:8px}
+
+/* ---- cards ---- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;margin-top:46px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:transform .2s ease,box-shadow .2s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(14,59,46,.4)}
+.card .ic{width:46px;height:46px;border-radius:12px;background:var(--sand);color:var(--emerald);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.card .ic svg{width:24px;height:24px}
+.card h3{margin-bottom:8px}
+.card p{font-size:.95rem}
+
+/* ---- process ---- */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px;counter-reset:step}
+.step{position:relative;padding-top:30px;border-top:2px solid var(--gold)}
+.step .no{font-family:var(--font-mono);font-size:.8rem;color:var(--gold-deep);letter-spacing:.1em}
+.step h3{font-size:1.15rem;margin:8px 0 8px}
+.step p{font-size:.92rem}
+
+/* ---- profile ---- */
+.profile{background:var(--emerald);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:.8fr 1.2fr}
+.profile .photo{background:var(--emerald-700);display:flex;align-items:center;justify-content:center;padding:50px}
+.avatar{width:150px;height:150px;border-radius:50%;background:var(--gold);color:var(--emerald);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:3rem;font-weight:600;border:3px solid rgba(255,255,255,.25)}
+.profile .body{padding:54px}
+.profile .body blockquote{font-family:var(--font-display);font-size:1.45rem;line-height:1.4;color:#fff;font-style:italic;margin:18px 0 22px}
+.profile .sig{font-family:var(--font-mono);font-size:.8rem;letter-spacing:.08em;color:var(--gold)}
+
+/* ---- calculator ---- */
+.calc{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:40px;box-shadow:0 30px 60px -40px rgba(14,59,46,.45);max-width:760px;margin:46px auto 0}
+.calc-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.field{margin-bottom:24px}
+.field .frow{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
+.field label{font-size:.9rem;font-weight:500;color:var(--ink)}
+.field output{font-family:var(--font-mono);font-size:1rem;color:var(--emerald);font-weight:500}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:5px;border-radius:3px;background:var(--sand);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--emerald);border:3px solid var(--gold);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--emerald);border:3px solid var(--gold);cursor:pointer}
+input[type=range]:focus-visible{box-shadow:0 0 0 3px rgba(191,161,90,.4)}
+.calc-result{background:var(--emerald);border-radius:var(--radius);padding:30px;text-align:center;color:#fff}
+.calc-result .rl{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.calc-result .rv{font-family:var(--font-display);font-size:3rem;margin:6px 0 2px}
+.calc-result .rs{font-size:.82rem;color:rgba(239,235,223,.7)}
+
+/* ---- testimonial ---- */
+.quote-band{background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.quote-band .container{padding-top:70px;padding-bottom:70px;text-align:center}
+.quote-band blockquote{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2.2rem);line-height:1.35;color:var(--emerald);max-width:22ch;margin:18px auto 18px;font-style:italic}
+.quote-band .who{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;color:var(--gold-deep);text-transform:uppercase}
+
+/* ---- contact / form ---- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:46px}
+.info-row{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.info-row svg{width:22px;height:22px;color:var(--gold-deep);flex:none;margin-top:3px}
+.info-row .k{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft)}
+.info-row .v{font-size:1.05rem;color:var(--ink)}
+.form{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:34px}
+.form label{display:block;font-size:.82rem;font-weight:500;margin:16px 0 6px;color:var(--ink)}
+.form input,.form select,.form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-family:var(--font-body);font-size:.95rem;background:var(--ivory);color:var(--ink)}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(191,161,90,.18)}
+.form .btn{margin-top:22px;width:100%;justify-content:center}
+
+/* ---- list with ticks ---- */
+.ticks{list-style:none;margin-top:24px}
+.ticks li{display:flex;gap:12px;padding:9px 0;color:var(--ink-soft)}
+.ticks li svg{width:20px;height:20px;color:var(--gold-deep);flex:none;margin-top:3px}
+
+/* ---- two-col intro ---- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.media{background:var(--emerald-700);border-radius:20px;min-height:380px;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:34px}
+.media::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,rgba(191,161,90,.06) 0 22px,transparent 22px 44px)}
+.media .tag{position:relative;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;color:var(--gold);text-transform:uppercase}
+.media .big{position:relative;font-family:var(--font-display);font-size:2rem;color:#fff;margin-top:6px;line-height:1.15}
+
+/* ---- footer ---- */
+footer{background:var(--emerald);color:rgba(239,235,223,.7);padding:64px 0 30px;font-size:.9rem}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+footer .brand .name{color:#fff}
+footer h4{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;font-weight:500}
+footer a:hover{color:var(--gold)}
+footer .links a{display:block;padding:5px 0}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:48px;padding-top:24px;font-size:.76rem;color:rgba(239,235,223,.45);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--font-mono)}
+
+/* ---- mobile ---- */
+@media(max-width:920px){
+  .hero .container{grid-template-columns:1fr;gap:34px;padding-top:56px;padding-bottom:64px}
+  .profile{grid-template-columns:1fr}
+  .calc-grid{grid-template-columns:1fr;gap:26px}
+  .contact-grid,.split{grid-template-columns:1fr;gap:34px}
+  .steps{grid-template-columns:1fr 1fr}
+  .stats .container{grid-template-columns:1fr 1fr;gap:28px 0}
+  .stat{border-left:none;padding-left:0}
+  .foot-grid{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:680px){
+  .container{padding:0 20px}
+  .menu{position:fixed;inset:0 0 0 auto;width:78%;max-width:320px;background:var(--ivory);flex-direction:column;align-items:flex-start;gap:6px;padding:90px 28px 28px;transform:translateX(100%);transition:transform .3s ease;box-shadow:-20px 0 50px -30px rgba(0,0,0,.5);z-index:60}
+  .menu.open{transform:translateX(0)}
+  .menu a{font-size:1.15rem;padding:12px 0;width:100%;border-bottom:1px solid var(--line);font-family:var(--font-display)}
+  .menu a.active::after{display:none}
+  .hamburger{display:flex}
+  .nav-cta .btn{display:none}
+  .topline{font-size:.7rem}
+  .steps{grid-template-columns:1fr}
+  .stats .container{grid-template-columns:1fr 1fr}
+  .calc{padding:26px}
+  section.block{padding:60px 0}
+  .profile .body,.form{padding:28px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+.scrim{display:none;position:fixed;inset:0;background:rgba(14,59,46,.4);z-index:55}
+.scrim.show{display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<!-- top contact line -->
+<div class="topline">
+  <div class="container">
+    <span>25–27 Sheridan Street, Cairns QLD 4870</span>
+    <span><a href="tel:0740410855">Ph 07 4041 0855</a> · <a href="tel:0419787766">Mob 0419 787 766</a> · <a href="mailto:david@loanselect.com.au">david@loanselect.com.au</a></span>
+  </div>
+</div>
+
+<!-- header -->
+<header>
+  <div class="container nav">
+    <a class="brand" href="#" data-page="home" aria-label="Loan Select Cairns home">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#BFA15A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>
+      </span>
+      <span>
+        <span class="name">Loan Select</span><br>
+        <span class="sub">Cairns</span>
+      </span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Primary">
+      <a href="#" data-page="home" class="active">Home</a>
+      <a href="#" data-page="about">About</a>
+      <a href="#" data-page="services">Services</a>
+      <a href="#" data-page="calculators">Calculators</a>
+      <a href="#" data-page="contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-dark" data-page="contact" href="#">Book a free chat</a>
+      <button class="hamburger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+
+<!-- ============== HOME ============== -->
+<main>
+<div class="page active" id="page-home">
+  <section class="hero on-dark">
+    <div class="container">
+      <div>
+        <span class="eyebrow">Family-owned in Cairns · Est. 2000</span>
+        <h1>Buying a home is a time to be <em>excited</em>. Don't waste it looking for a loan.</h1>
+        <p class="lead">We're a local family brokerage. We do the legwork across a panel of lenders, narrow it down with you, and manage the paperwork through to approval — so you can get on with the exciting part.</p>
+        <div class="actions">
+          <a class="btn btn-gold" data-page="contact" href="#">Book a free chat →</a>
+          <a class="btn btn-ghost" data-page="calculators" href="#">Try the calculators</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Indicative rate snapshot">
+        <div class="rc-title">Indicative rate snapshot</div>
+        <div class="rc-row"><span class="lbl">Owner-occupier, variable</span><span class="val">6.04% <small>p.a.</small></span></div>
+        <div class="rc-row"><span class="lbl">Investor, variable</span><span class="val">6.39% <small>p.a.</small></span></div>
+        <div class="rc-row"><span class="lbl">3-year fixed</span><span class="val">5.79% <small>p.a.</small></span></div>
+        <div class="rc-row"><span class="lbl">Lenders on our panel</span><span class="val">40+</span></div>
+        <p class="rc-note">Indicative only. Your rate depends on your circumstances — ask us for a real comparison.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container">
+      <div class="stat"><div class="num">40+</div><div class="cap">Years of lending experience</div></div>
+      <div class="stat"><div class="num">2000</div><div class="cap">Serving Cairns since</div></div>
+      <div class="stat"><div class="num">40+</div><div class="cap">Lenders compared</div></div>
+      <div class="stat"><div class="num">$0</div><div class="cap">Cost to sit down with us</div></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <div class="split">
+        <div>
+          <span class="eyebrow">Why a broker</span>
+          <h2>A banker offers one bank. We work for you.</h2>
+          <p class="lead">Using our knowledge of the current market, we look across many loans and quickly narrow it to the ones that suit your specific needs. Then we choose together.</p>
+          <ul class="ticks">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg> A genuine choice of lenders and products</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg> We complete and manage the paperwork</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg> Followed through to approval and settlement</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"/></svg> We meet at our Cairns office, at a time that suits you</li>
+          </ul>
+        </div>
+        <div class="media">
+          <div>
+            <div class="tag">Centrally located</div>
+            <div class="big">Trustee House,<br>Sheridan Street, Cairns</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="background:var(--sand);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="block-head"><span class="eyebrow">What we help with</span><h2>Finance for every chapter</h2></div>
+      <div class="cards">
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-4h4v4"/></svg></div><h3>First home buyers</h3><p>Grants, deposits and pre-approval explained — guided through every step of your first purchase.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5"/><path d="M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div><h3>Refinancing</h3><p>Check whether a better rate or structure could be saving you money every single month.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l5-3 5 3v12M9 13h2M9 17h2"/></svg></div><h3>Investment loans</h3><p>Structure finance to build a property portfolio across Cairns and the Far North with confidence.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 3-9 9-3 3 9-15 3Z"/><path d="m13 8 3-5 4 2-2 5"/></svg></div><h3>Construction loans</h3><p>Build or renovate in the tropics with progress-payment lending set up to match your build.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="container">
+      <div class="block-head"><span class="eyebrow">How it works</span><h2>Four steps, and we do the heavy lifting</h2></div>
+      <div class="steps">
+        <div class="step"><div class="no">Step 01</div><h3>We meet</h3><p>A free, no-pressure chat about your goals — at our office or by phone.</p></div>
+        <div class="step"><div class="no">Step 02</div><h3>We research</h3><p>We compare the market and shortlist the loans that genuinely fit you.</p></div>
+        <div class="step"><div class="no">Step 03</div><h3>We choose together</h3><p>You decide with clear options on the table. No jargon, no pressure.</p></div>
+        <div class="step"><div class="no">Step 04</div><h3>We see it through</h3><p>We manage the application and paperwork all the way to approval.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" style="padding-top:0">
+    <div class="container">
+      <div class="profile">
+        <div class="photo"><div class="avatar" aria-hidden="true">DP</div></div>
+        <div class="body on-dark">
+          <span class="eyebrow">Meet the broker</span>
+          <blockquote>"After 40 years in lending, including my years with Westpac, I started Loan Select to give Cairns locals a better home-loan outcome — and a real person beside them through it."</blockquote>
+          <div class="sig">David Phillips · Accredited Mortgage Consultant</div>
+          <div style="margin-top:26px"><a class="btn btn-gold" data-page="about" href="#">More about us →</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <div class="container">
+      <span class="eyebrow" style="justify-content:center">Testimonial</span>
+      <blockquote>"Three banks said no. Loan Select found us the right home loan."</blockquote>
+      <div class="who">— Cameron & Shannon, Cairns</div>
+    </div>
+  </section>
+</div>
+
+<!-- ============== ABOUT ============== -->
+<div class="page" id="page-about">
+  <section class="hero on-dark" style="padding:0">
+    <div class="container" style="grid-template-columns:1fr;padding-top:70px;padding-bottom:60px">
+      <div>
+        <span class="eyebrow">About us</span>
+        <h1 style="max-width:16ch">A local family business since 2000.</h1>
+        <p class="lead">Dave, Cheryl, Joshua and Timothy — a family brokerage that works for you, not the lenders.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block">
+    <div class="container split">
+      <div>
+        <span class="eyebrow">Our story</span>
+        <h2>Built on bank-grade experience</h2>
+        <p style="margin-top:16px">Loan Select Cairns started in May 2000, after David left Westpac with the closing of his last branch. Drawing on extensive bank training across mortgages, settlements, loan legals and approvals, he set out to help customers navigate the home-loan process and reach a good outcome.</p>
+        <p style="margin-top:14px">More than two decades on, we're still a centrally located Cairns family business — the kind you can sit across the table from.</p>
+        <div style="margin-top:26px"><a class="btn btn-line" data-page="contact" href="#">Come and say hello</a></div>
+      </div>
+      <div class="media"><div><div class="tag">Family-run · Cairns</div><div class="big">Dave · Cheryl<br>Joshua · Timothy</div></div></div>
+    </div>
+  </section>
+  <section class="stats">
+    <div class="container">
+      <div class="stat"><div class="num">2000</div><div class="cap">Year established</div></div>
+      <div class="stat"><div class="num">40+</div><div class="cap">Years in finance</div></div>
+      <div class="stat"><div class="num">AFG</div><div class="cap">Aggregator · ACL 389087</div></div>
+      <div class="stat"><div class="num">YAPS</div><div class="cap">Proud local supporters</div></div>
+    </div>
+  </section>
+  <section class="block">
+    <div class="container">
+      <div class="block-head"><span class="eyebrow">What you can expect</span><h2>The way we like to work</h2></div>
+      <div class="cards">
+        <article class="card"><h3>We do the legwork</h3><p>You get a choice of lenders and more options, without trawling rate tables yourself.</p></article>
+        <article class="card"><h3>We work for you</h3><p>Because we're on your side, a broker always puts in that extra effort to get the right result.</p></article>
+        <article class="card"><h3>We stay with it</h3><p>We don't stop at finding finance — we manage the application and follow it to approval.</p></article>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ============== SERVICES ============== -->
+<div class="page" id="page-services">
+  <section class="hero on-dark" style="padding:0">
+    <div class="container" style="grid-template-columns:1fr;padding-top:70px;padding-bottom:60px">
+      <div>
+        <span class="eyebrow">Services</span>
+        <h1 style="max-width:18ch">The right loan for your individual needs.</h1>
+        <p class="lead">We consider a range of options, narrow it down to what suits you, then choose together.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block">
+    <div class="container">
+      <div class="cards">
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5"/><path d="M6 10v9h12v-9"/><path d="M10 19v-4h4v4"/></svg></div><h3>Home loans</h3><p>Whether you're buying your first or your next, we find a loan that fits your life and budget.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M5 5l3 3M16 16l3 3M2 12h4M18 12h4"/><circle cx="12" cy="12" r="3"/></svg></div><h3>First home buyers</h3><p>We'll help with grants, deposit options and pre-approval, and walk you through each step.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5"/><path d="M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div><h3>Refinancing</h3><p>A health check on your current loan — and a clear picture of what switching could save.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l5-3 5 3v12M9 13h2M9 17h2"/></svg></div><h3>Investment loans</h3><p>Finance structured for property investors building wealth across the Far North.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m3 21 3-9 9-3 3 9-15 3Z"/><path d="m13 8 3-5 4 2-2 5"/></svg></div><h3>Construction loans</h3><p>Progress-payment lending set up to match your build or renovation, stage by stage.</p></article>
+        <article class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.5"/><path d="M9 11l3 3 8-8"/></svg></div><h3>Pre-approval</h3><p>Shop with confidence knowing what you can borrow before you make an offer.</p></article>
+      </div>
+      <div style="text-align:center;margin-top:46px"><a class="btn btn-dark" data-page="contact" href="#">Talk to us about your situation →</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============== CALCULATORS ============== -->
+<div class="page" id="page-calculators">
+  <section class="hero on-dark" style="padding:0">
+    <div class="container" style="grid-template-columns:1fr;padding-top:70px;padding-bottom:60px">
+      <div>
+        <span class="eyebrow">Calculators</span>
+        <h1 style="max-width:16ch">Run the numbers in seconds.</h1>
+        <p class="lead">A quick guide to repayments. For figures tailored to you, have a chat with us — it's free.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" style="padding-top:0;margin-top:-30px">
+    <div class="container">
+      <div class="calc">
+        <span class="eyebrow">Repayment estimator</span>
+        <div class="calc-grid" style="margin-top:22px">
+          <div>
+            <div class="field">
+              <div class="frow"><label for="amt">Loan amount</label><output id="amtOut">$550,000</output></div>
+              <input type="range" id="amt" min="100000" max="1500000" step="10000" value="550000">
+            </div>
+            <div class="field">
+              <div class="frow"><label for="rate">Interest rate</label><output id="rateOut">6.04%</output></div>
+              <input type="range" id="rate" min="3" max="9" step="0.01" value="6.04">
+            </div>
+            <div class="field" style="margin-bottom:0">
+              <div class="frow"><label for="term">Loan term</label><output id="termOut">30 years</output></div>
+              <input type="range" id="term" min="10" max="30" step="1" value="30">
+            </div>
+          </div>
+          <div class="calc-result">
+            <div class="rl">Est. monthly repayment</div>
+            <div class="rv" id="result">$3,309</div>
+            <div class="rs" id="totint">Total interest ≈ $641,000</div>
+          </div>
+        </div>
+        <p style="font-size:.78rem;color:var(--ink-soft);margin-top:22px;font-family:var(--font-mono)">Indicative only. Principal & interest, fortnightly conversions and fees not included. Not a quote or credit offer.</p>
+      </div>
+      <div style="text-align:center;margin-top:40px"><a class="btn btn-gold" data-page="contact" href="#">Get my real numbers →</a></div>
+    </div>
+  </section>
+</div>
+
+<!-- ============== CONTACT ============== -->
+<div class="page" id="page-contact">
+  <section class="hero on-dark" style="padding:0">
+    <div class="container" style="grid-template-columns:1fr;padding-top:70px;padding-bottom:60px">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h1 style="max-width:16ch">Let's find your right loan.</h1>
+        <p class="lead">Book a free, no-pressure chat. We'll meet at our central Cairns office at a time that suits you.</p>
+      </div>
+    </div>
+  </section>
+  <section class="block" style="padding-top:54px">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><div class="k">Visit</div><div class="v">Trustee House, Shop 1, 25–27 Sheridan Street, Cairns QLD 4870</div></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2Z"/></svg><div><div class="k">Call</div><div class="v"><a href="tel:0740410855">07 4041 0855</a> · <a href="tel:0419787766">0419 787 766</a></div></div></div>
+          <div class="info-row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><div class="k">Email</div><div class="v"><a href="mailto:david@loanselect.com.au">david@loanselect.com.au</a></div></div></div>
+          <div class="info-row" style="border-bottom:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><div class="k">Hours</div><div class="v">By appointment — at a time that suits you</div></div></div>
+        </div>
+        <form class="form" onsubmit="event.preventDefault();this.querySelector('.btn').textContent='Thanks — we\'ll be in touch';">
+          <label for="n">Name</label><input id="n" type="text" placeholder="Your name" required>
+          <label for="e">Email</label><input id="e" type="email" placeholder="you@email.com" required>
+          <label for="p">Phone</label><input id="p" type="tel" placeholder="0400 000 000">
+          <label for="t">What can we help with?</label>
+          <select id="t"><option>First home loan</option><option>Refinancing</option><option>Investment loan</option><option>Construction loan</option><option>Just a general chat</option></select>
+          <label for="m">Message</label><textarea id="m" rows="4" placeholder="Tell us a little about what you're after"></textarea>
+          <button class="btn btn-gold" type="submit">Request a free chat →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<!-- footer -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#" data-page="home"><span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="#BFA15A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></span><span><span class="name">Loan Select</span><br><span class="sub">Cairns</span></span></a>
+        <p style="margin-top:18px;max-width:34ch">A family-owned Cairns loan brokerage helping locals into the right home loan since 2000.</p>
+      </div>
+      <div class="links">
+        <h4>Explore</h4>
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="services">Services</a>
+        <a href="#" data-page="calculators">Calculators</a>
+        <a href="#" data-page="contact">Contact</a>
+      </div>
+      <div class="links">
+        <h4>Get in touch</h4>
+        <a href="tel:0740410855">07 4041 0855</a>
+        <a href="tel:0419787766">0419 787 766</a>
+        <a href="mailto:david@loanselect.com.au">david@loanselect.com.au</a>
+        <span style="display:block;padding-top:5px">25–27 Sheridan Street,<br>Cairns QLD 4870</span>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Loan Select Pty Ltd · ACN 079 126 328 · ABN 17 079 126 328</span>
+      <span>Authorised Credit Representative under Australian Finance Group · ACL 389087</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---- page routing ---- */
+  var pages=document.querySelectorAll('.page');
+  var navlinks=document.querySelectorAll('#menu a');
+  function show(name){
+    pages.forEach(function(p){p.classList.toggle('active',p.id==='page-'+name);});
+    navlinks.forEach(function(a){a.classList.toggle('active',a.dataset.page===name);});
+    closeMenu();
+    window.scrollTo({top:0,behavior:'instant' in window?'instant':'auto'});
+  }
+  document.body.addEventListener('click',function(e){
+    var t=e.target.closest('[data-page]');
+    if(t){e.preventDefault();show(t.dataset.page);}
+  });
+
+  /* ---- mobile menu ---- */
+  var burger=document.getElementById('burger');
+  var menu=document.getElementById('menu');
+  var scrim=document.getElementById('scrim');
+  function openMenu(){menu.classList.add('open');scrim.classList.add('show');burger.setAttribute('aria-expanded','true');}
+  function closeMenu(){menu.classList.remove('open');scrim.classList.remove('show');burger.setAttribute('aria-expanded','false');}
+  burger.addEventListener('click',function(){menu.classList.contains('open')?closeMenu():openMenu();});
+  scrim.addEventListener('click',closeMenu);
+
+  /* ---- calculator ---- */
+  var amt=document.getElementById('amt'),rate=document.getElementById('rate'),term=document.getElementById('term');
+  var amtOut=document.getElementById('amtOut'),rateOut=document.getElementById('rateOut'),termOut=document.getElementById('termOut');
+  var result=document.getElementById('result'),totint=document.getElementById('totint');
+  var aud=new Intl.NumberFormat('en-AU',{style:'currency',currency:'AUD',maximumFractionDigits:0});
+  function calc(){
+    var P=+amt.value,annual=+rate.value,years=+term.value,r=annual/100/12,n=years*12;
+    var m=r===0?P/n:P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);
+    amtOut.textContent=aud.format(P);
+    rateOut.textContent=annual.toFixed(2)+'%';
+    termOut.textContent=years+' years';
+    result.textContent=aud.format(Math.round(m));
+    totint.textContent='Total interest ≈ '+aud.format(Math.round(m*n-P));
+  }
+  [amt,rate,term].forEach(function(el){el.addEventListener('input',calc);});
+  calc();
+})();
+</script>
+</body>
+</html>

@@ -1,9 +1,0 @@
-main section:first-of-type {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-main section:last-of-type {
-    padding-top: 4rem;
-}

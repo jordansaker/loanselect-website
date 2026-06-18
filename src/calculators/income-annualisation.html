@@ -1,69 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loan Select Cairns | Income Annualisation Calculator</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../calc-type-style.css">
-    <link rel="shortcut icon" href="../images/LS_logo.png" type="image/x-icon">
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Income Annualisation — Loan Select Cairns</title>
+<meta name="description" content="Convert weekly, fortnightly or monthly income into an annual figure." />
+<link rel="icon" type="image/png" href="../images/LS_logo.png" />
+<link rel="shortcut icon" href="../images/LS_logo.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <header>
-        <!-- Mobile Nav -->
-        <!-- Loan Select Text -->
-        <h2>Loan Select Cairns</h2>
-        <img id="banner-nav" src="../images/hero_background.png" alt="hero-background">
-        <nav id="small-screen">
-            
-            <!-- Hamburger icon -->
-            <details>
-                <summary>
-                    <span class="fa fa-bars"></span>
-                </summary>
-                <nav>
-                    <a href="../index.html">Home</a>
-                    <a href="../about.html">About</a>
-                    <a href="../contact.html">Contact</a>
-                    <a href="../calculator-index.html">Calculators</a>
-                    <a href="../news.html">News</a>
-                </nav>
-            </details>
-        </nav>
-        <!-- Desktop Nav -->
-        <img id="logo-nav" src="../images/LS_logo.png">
-        <nav id="large-screen">
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="../about.html">About</a>
-                <a href="../contact.html">Contact</a>
-                <a href="../calculator-index.html">Calculators</a>
-                <a href="../news.html">News</a>
-            </nav>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h1>Income Annualisation Calculator</h1>
-            <p>Work out annual income from money received so far this year.</p>
-            <iframe class="VisiCalcClass" id="Income_Annualisation_Calculator" src="https://www.visionabacus.net/Tools/B3/SuiteA/Z200/MFAA/Income_Annualisation_Calculator/BlueGreen" frameborder="0" scrolling="no"></iframe>
-            <a href="../calculator-index.html">More Calculators</a>
-        </section>
-        <section>
-            <a href="https://www.google.com/maps/place/25+Sheridan+St,+Cairns+City+QLD+4870/@-16.9245446,145.7739497,19z/data=!4m6!3m5!1s0x6978669150833789:0x911daa3a4f38ff1!8m2!3d-16.9246986!4d145.7741026!16s%2Fg%2F11c2h1lsmv" target="_blank"><p>Loan Select Cairns, Trustee House, Shop 1, 25 Sheridan Street, Cairns, QLD, 4870</p></a>
-            <p>Authorised Credit Representative under Australian Finance Group Australian Credit Licence 389087</p>
-            <p>Loan Select Pty Ltd, A.C.N. 079 126 328, A.B.N. 17 079 126 328</p>
-            <div>
-                <a href="../documents/Terms-Conditions.pdf" target="_blank"><h2><em>Terms & Conditions</em></h2></a>
-                <p>Copyright &copy 2023 - Loan Select Cairns</p>
-            </div>
-        </section>
-    </main>    
-    <footer>
-        <a href="https://www.facebook.com/loanselect.cairns"><span class="fab fa-facebook"></span></a>
-        <a href="mailto: david@loanselect.com.au"><span class="fa fa-envelope"></span></a>
-        <a href="https://au.linkedin.com/in/david-phillips-loan-select-cairns-a2a99529"><span class="fab fa-linkedin"></span></a>
-    </footer>
+
+<div class="topline">
+  <div class="container">
+    <span>25–27 Sheridan Street, Cairns QLD 4870</span>
+    <span><a href="tel:0740410855">Ph 07 4041 0855</a> · <a href="tel:0419787766">Mob 0419 787 766</a> · <a href="mailto:david@loanselect.com.au">david@loanselect.com.au</a></span>
+  </div>
+</div>
+
+<header class="site">
+  <div class="container nav">
+    <a class="brand" href="/index.html" aria-label="Loan Select Cairns home">
+      <img src="../images/LS_logo.png" alt="Loan Select Cairns logo">
+      <span>
+        <span class="name">Loan Select</span>
+        <span class="sub">Cairns</span>
+      </span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Primary">
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/services.html">Services</a>
+      <a href="/calculators.html" class="active">Calculators</a>
+      <a href="/news.html">News</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-dark" href="/contact.html">Book a free chat</a>
+      <button class="hamburger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+
+<main class="calc-page">
+  <div class="container">
+    <div class="wrap">
+      <span class="eyebrow">Calculator</span>
+      <h1>Income Annualisation</h1>
+      <p class="lead">Convert weekly, fortnightly or monthly income into an annual figure.</p>
+      <iframe class="VisiCalcClass" id="Income_Annualisation_Calculator" src="https://www.visionabacus.net/Tools/B3/SuiteA/Z200/MFAA/Income_Annualisation_Calculator/BlueGreen" frameborder="0" scrolling="no" title="Income Annualisation"></iframe>
+      <a class="backlink" href="/calculators.html">← All calculators</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="/index.html">
+          <img src="../images/LS_logo.png" alt="Loan Select Cairns logo">
+          <span><span class="name">Loan Select</span><span class="sub">Cairns</span></span>
+        </a>
+        <p style="margin-top:18px;max-width:34ch">A family-owned Cairns loan brokerage helping locals into the right home loan since 2000.</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/loanselect.cairns" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-8h3l.5-4H13V7.5c0-1.2.3-2 2-2H17V2.2C16.6 2.1 15.5 2 14.3 2 11.7 2 10 3.6 10 6.6V10H7v4h3v8h3Z"/></svg></a>
+          <a href="https://au.linkedin.com/in/david-phillips-loan-select-cairns-a2a99529" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4.5A1.5 1.5 0 1 1 5.5 6 1.5 1.5 0 0 1 4 4.5ZM4 9h3v11H4Zm5 0h2.8v1.5h.1A3.1 3.1 0 0 1 14.7 9c3 0 3.3 2 3.3 4.6V20h-3v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H8Z"/></svg></a>
+          <a href="mailto:david@loanselect.com.au" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></a>
+        </div>
+      </div>
+      <div class="links">
+        <h4>Explore</h4>
+        <a href="/index.html">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/calculators.html">Calculators</a>
+        <a href="/news.html">News</a>
+        <a href="/contact.html">Contact</a>
+      </div>
+      <div class="links">
+        <h4>Get in touch</h4>
+        <a href="tel:0740410855">07 4041 0855</a>
+        <a href="tel:0419787766">0419 787 766</a>
+        <a href="mailto:david@loanselect.com.au">david@loanselect.com.au</a>
+        <span style="display:block;padding-top:5px">25–27 Sheridan Street,<br>Cairns QLD 4870</span>
+        <a href="/documents/Terms-Conditions.pdf" target="_blank" rel="noopener" style="padding-top:14px">Terms &amp; Conditions →</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>Loan Select Pty Ltd · ACN 079 126 328 · ABN 17 079 126 328</span>
+      <span>Authorised Credit Representative under Australian Finance Group · ACL 389087</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../app.js"></script>
 </body>
 </html>
